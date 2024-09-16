@@ -176,66 +176,54 @@ class _AdminPageState extends State<AdminPage> with TickerProviderStateMixin {
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         List messageList = snapshot.data!.docs;
-                        _listAnimationController.forward();
-                        return AnimatedList(
-                          initialItemCount: messageList.length,
-                          itemBuilder: (context, index, animation) {
+                        return ListView.builder(
+                          itemCount: messageList.length,
+                          reverse:
+                              true, // Display newest messages at the bottom
+                          itemBuilder: (context, index) {
                             DocumentSnapshot document = messageList[index];
                             Map<String, dynamic> data =
                                 document.data() as Map<String, dynamic>;
                             String nameText = data['name'];
                             String messageText = data['message'];
 
-                            return SlideTransition(
-                              position: Tween<Offset>(
-                                begin: const Offset(1, 0),
-                                end: Offset.zero,
-                              ).animate(CurvedAnimation(
-                                parent: animation,
-                                curve: Curves.easeOutQuart,
-                              )),
-                              child: FadeTransition(
-                                opacity: animation,
-                                child: Container(
-                                  margin: const EdgeInsets.symmetric(
-                                      vertical: 8.0, horizontal: 16.0),
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF4C956C),
-                                    borderRadius: BorderRadius.circular(15),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: const Color(0xFF4C956C)
-                                            .withOpacity(0.3),
-                                        blurRadius: 10,
-                                        offset: const Offset(0, 5),
+                            return Container(
+                              margin: const EdgeInsets.symmetric(
+                                  vertical: 8.0, horizontal: 16.0),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF4C956C),
+                                borderRadius: BorderRadius.circular(15),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: const Color(0xFF4C956C)
+                                        .withOpacity(0.3),
+                                    blurRadius: 10,
+                                    offset: const Offset(0, 5),
+                                  ),
+                                ],
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'FROM: $nameText',
+                                      style: const TextStyle(
+                                        color: Color(0xFFFEFEE3),
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w500,
                                       ),
-                                    ],
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(20.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'FROM: $nameText',
-                                          style: const TextStyle(
-                                            color: Color(0xFFFEFEE3),
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                        ),
-                                        const SizedBox(height: 8),
-                                        Text(
-                                          messageText,
-                                          style: const TextStyle(
-                                            color: Color(0xFFFEFEE3),
-                                            fontSize: 20,
-                                          ),
-                                        ),
-                                      ],
                                     ),
-                                  ),
+                                    const SizedBox(height: 8),
+                                    Text(
+                                      messageText,
+                                      style: const TextStyle(
+                                        color: Color(0xFFFEFEE3),
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             );
