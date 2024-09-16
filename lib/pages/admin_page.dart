@@ -73,6 +73,7 @@ class _AdminPageState extends State<AdminPage> with TickerProviderStateMixin {
             return Row(
               children: [
                 // First column (70% of screen width)
+                // zxc
                 SizedBox(
                   width: constraints.maxWidth * 0.7,
                   child: Padding(
