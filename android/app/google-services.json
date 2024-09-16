@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "250921547860",
+    "firebase_url": "https://shoutout-d907e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "shoutout-d907e",
+    "storage_bucket": "shoutout-d907e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250921547860:android:81f5ea39425a169f3e55c1",
+        "android_client_info": {
+          "package_name": "com.guile.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXFaQG4tlMsdgDo8UF-6VOXyuMNaATLeo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
