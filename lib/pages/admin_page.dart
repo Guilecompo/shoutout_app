@@ -20,6 +20,7 @@ class _AdminPageState extends State<AdminPage> with TickerProviderStateMixin {
   late AnimationController _listAnimationController;
   late AnimationController _randomShoutoutController;
   late Animation<double> _randomShoutoutAnimation;
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -46,6 +47,7 @@ class _AdminPageState extends State<AdminPage> with TickerProviderStateMixin {
     _listAnimationController.dispose();
     _randomShoutoutController.dispose();
     refreshTimer?.cancel();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -176,10 +178,18 @@ class _AdminPageState extends State<AdminPage> with TickerProviderStateMixin {
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         List messageList = snapshot.data!.docs;
+                        WidgetsBinding.instance.addPostFrameCallback((_) {
+                          if (_scrollController.hasClients) {
+                            _scrollController.animateTo(
+                              0,
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.easeOut,
+                            );
+                          }
+                        });
                         return ListView.builder(
+                          controller: _scrollController,
                           itemCount: messageList.length,
-                          reverse:
-                              true, // Display newest messages at the bottom
                           itemBuilder: (context, index) {
                             DocumentSnapshot document = messageList[index];
                             Map<String, dynamic> data =
