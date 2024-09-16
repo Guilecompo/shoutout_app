@@ -31,6 +31,17 @@ class _LoginPageState extends State<LoginPage>
     );
     _animation = CurvedAnimation(parent: _controller, curve: Curves.easeInOut);
     _controller.forward();
+
+    // Add this listener to convert text to uppercase
+    _studentIdController.addListener(() {
+      final String text = _studentIdController.text.toUpperCase();
+      _studentIdController.value = _studentIdController.value.copyWith(
+        text: text,
+        selection:
+            TextSelection(baseOffset: text.length, extentOffset: text.length),
+        composing: TextRange.empty,
+      );
+    });
   }
 
   @override
@@ -41,7 +52,7 @@ class _LoginPageState extends State<LoginPage>
 
   void _login() async {
     String studentId = _studentIdController.text.trim();
-    const String adminStudentId = 'PHINMA-COC-CITE-2024';
+    const String adminStudentId = 'PHINMA-COC-CITE';
 
     if (studentId.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -189,6 +200,7 @@ class _LoginPageState extends State<LoginPage>
                         children: [
                           TextField(
                             controller: _studentIdController,
+                            textCapitalization: TextCapitalization.characters,
                             decoration: InputDecoration(
                               hintText: 'Enter Student ID',
                               filled: true,
