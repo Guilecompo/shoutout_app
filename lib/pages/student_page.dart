@@ -97,7 +97,7 @@ class _StudentPageState extends State<StudentPage>
             ),
             // Second Flexible (flex 20)
             Flexible(
-              flex: 20,
+              flex: 14,
               child: SlideTransition(
                 position: Tween<Offset>(
                   begin: const Offset(0, 0.5),
@@ -107,7 +107,7 @@ class _StudentPageState extends State<StudentPage>
                   child: Padding(
                     padding: EdgeInsets.all(16.0),
                     child: Text(
-                      'This space is used for additional information or interaction',
+                      ' ',
                       style: TextStyle(
                         fontSize: 20,
                         color: Color(0xFFFEFEE3),
@@ -121,7 +121,7 @@ class _StudentPageState extends State<StudentPage>
             ),
             // Third Flexible (flex 4)
             Flexible(
-              flex: 4,
+              flex: 10,
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Row(
