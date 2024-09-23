@@ -564,7 +564,7 @@ class _StudentPageState extends State<StudentPage>
               child: const Text('Anonymous'),
               onPressed: () {
                 Navigator.of(context).pop();
-                _sendMessage('Anonymous');
+                _sendMessage('ANONYMOUS');
               },
             ),
           ],

@@ -102,7 +102,19 @@ class _AdminPageState extends State<AdminPage> with TickerProviderStateMixin {
                           ),
                           const Center(
                             child: Text(
-                              'PHINMA Cagayan de Oro College  ',
+                              'PHINMA',
+                              style: TextStyle(
+                                fontSize: 32,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.greenAccent,
+                                letterSpacing: 1.5,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          const Center(
+                            child: Text(
+                              'Cagayan de Oro College  ',
                               style: TextStyle(
                                 fontSize: 32,
                                 fontWeight: FontWeight.bold,
@@ -349,7 +361,7 @@ class _ShoutoutListTileState extends State<ShoutoutListTile>
                     'FROM: $nameText',
                     style: const TextStyle(
                       color: Color(0xFFFEFEE3),
-                      fontSize: 22,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.2,
                     ),
@@ -359,7 +371,7 @@ class _ShoutoutListTileState extends State<ShoutoutListTile>
                     messageText,
                     style: const TextStyle(
                       color: Color(0xFFFEFEE3),
-                      fontSize: 32,
+                      fontSize: 28,
                       fontWeight: FontWeight.w300,
                       letterSpacing: 0.5,
                       height: 1.3,
