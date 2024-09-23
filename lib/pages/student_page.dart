@@ -70,7 +70,7 @@ class _StudentPageState extends State<StudentPage>
                                 TypewriterAnimatedText(
                                   widget.name,
                                   textStyle: const TextStyle(
-                                    fontSize: 24,
+                                    fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                     color: Color(0xFFFEFEE3),
                                   ),
