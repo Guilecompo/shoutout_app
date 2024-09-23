@@ -4,10 +4,11 @@ class FirestoreService {
   final CollectionReference messages =
       FirebaseFirestore.instance.collection('messages');
 
-  Future<void> addMessage(String message, String name) {
+  Future<void> addMessage(String message, String name, String studentId) {
     return messages.add({
       'message': message,
       'name': name,
+      'studentId' : studentId,
       'timestamp': Timestamp.now(),
     });
   }
