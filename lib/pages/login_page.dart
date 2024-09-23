@@ -147,23 +147,48 @@ class _LoginPageState extends State<LoginPage>
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          'INFORMATION TECHNOLOGY',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFFFFA500),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Center(
+                          child: Text(
+                            'PHINMA',
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.greenAccent,
+                              letterSpacing: 1.5,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
                         ),
-                        SizedBox(height: 20),
-                        Text(
-                          'EXHIBIT',
-                          style: TextStyle(
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFFFEFEE3),
+                        Center(
+                          child: Text(
+                            'Cagayan de Oro College',
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.greenAccent,
+                              letterSpacing: 1.5,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          'I.T EXHIBIT 2024',
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.greenAccent,
+                            letterSpacing: 1.5,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        const SizedBox(
+                          height: 40,
                         ),
                         SizedBox(height: 20),
                         Text(

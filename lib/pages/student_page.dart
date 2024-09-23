@@ -547,9 +547,11 @@ class _StudentPageState extends State<StudentPage>
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           title: const Text('Choose Name Option'),
-          content: const Text('Do you want to send the message with your real name or anonymously?'),
+          content: const Text(
+              'Do you want to send the message with your real name or anonymously?'),
           actions: <Widget>[
             TextButton(
               child: const Text('Real Name'),
@@ -653,14 +655,29 @@ class _StudentPageState extends State<StudentPage>
                 child: const Center(
                   child: Padding(
                     padding: EdgeInsets.all(16.0),
-                    child: Text(
-                      ' ',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Color(0xFFFEFEE3),
-                        fontWeight: FontWeight.w300,
-                      ),
-                      textAlign: TextAlign.center,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Disclaimer',
+                          style: TextStyle(
+                            fontSize: 26,
+                            color: Color(0xFFFEFEE3),
+                            fontWeight: FontWeight.w300,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        Text(
+                          'Please refrain from using any inappropriate language. Continuing to post such content may result in a visit to the Dean`s Office. We have the means to identify users.',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Color(0xFFFEFEE3),
+                            fontWeight: FontWeight.w300,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -721,7 +738,7 @@ class _StudentPageState extends State<StudentPage>
                           if (_containsBadWords(_messageController.text)) {
                             // Show dialog if bad words are found
                             _showMessageDialog('Warning',
-                                'No bad words allowed! If you still insist to post a inappropriate words. You will be called in Dean Office. We know who you are we can track it!');
+                                'Inappropriate words have been detected. Please refrain from using them.');
                             return;
                           }
 
